@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Details from './components/Details'
-import Friend from './components/Character'
+import MainCharacter from './components/Character'
 import './App.css';
 
 const App = () => {
@@ -34,8 +34,8 @@ const App = () => {
       <h1 className="Header">Characters:</h1>
       <div className="App">
         {
-          characters.map((character) => {
-            return <span key={character.id} character={character} action={openDetails}></span>
+          characters.map((ch) => {
+            return <MainCharacter bold key={ch.id} info={ch} action={openDetails} />
           })
         }
       {

@@ -2,17 +2,17 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-export default function Character({ props }) {
-  return (
-    <StyledFriend>
-      {props.characters.name}
-      <button>
-        See details
-      </button>
-    </StyledFriend>
-  )
-}
-
+export default function MainCharacter({ info, action }) {
+    return (
+      <StyledFriend>
+        {info.name}
+        <button onClick={() => action(info.id)}>
+          See details
+        </button>
+      </StyledFriend>
+    )
+  }
+  
 // creating a keyframe
 const kf = keyframes`
   100%{
