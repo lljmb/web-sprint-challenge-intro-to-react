@@ -1,19 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Details from './components/Details'
+import Friend from './components/Character'
 import './App.css';
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
 
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+  const [characters, setCharacters] = useState([])
+  const [currentFriendId, setCurrentFriendId] = useState('1')
+
+  const openDetails = id => {
+    setCurrentFriendId(id)
+  }
+
+  const closeDetails = () => {
+    setCurrentFriendId(null)
+  }
+
+  useEffect(() => {
+    axios.get('https://rickandmortyapi.com/api/character/')
+      .then(res => {
+        setCharacters(res.data.results)
+        console.log(res.data.results);
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
 
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
+   
+    <div className='container'>
+      <h1 className="Header">Characters:</h1>
+      <div className="App">
+        {
+          characters.map((character) => {
+            return <span key={character.id} character={character} action={openDetails}></span>
+          })
+        }
+      {
+        currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
+      }
     </div>
-  );
+    </div>
+
+  // return (
+  //   <div className="App">
+  //     <h1 className="Header">Characters</h1>
+  //   </div>
+   )
 }
 
 export default App;
