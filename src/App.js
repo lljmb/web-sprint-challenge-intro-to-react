@@ -31,7 +31,8 @@ const App = () => {
   return (
    
     <div className='container'>
-      <h1 className="Header">Characters:</h1>
+      <center><h1>I'm Pickle Rick!</h1></center>
+      <h2 className="Header">Characters:</h2>
       <div className="App">
         {
           characters.map((ch) => {

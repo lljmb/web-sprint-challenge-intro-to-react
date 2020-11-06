@@ -29,7 +29,8 @@ const StyledFriend = styled.div`
 opacity: 0;
 animation: ${kf} 2.5s ease-in-out forwards;
 color: ${(pr) => (pr.danger ? pr.theme.danger : pr.theme.primaryColor)};
-font-weight: ${pr => (pr.bold ? 'bold' : 'initial')};
+font-weight: bold;
+background: 
 width: 60%;
 display: flex;
 justify-content: space-between;

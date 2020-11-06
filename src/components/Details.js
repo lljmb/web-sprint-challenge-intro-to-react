@@ -37,7 +37,10 @@ export default function Details(props) {
 
 
 const StyledDeets = styled.div`
-font-weight: bolder`
+    font-weight: bolder;
+    background: lightpink;
+    opacity: .65;
+    `
 
 const MiniBio = styled.div`
     display: inline;

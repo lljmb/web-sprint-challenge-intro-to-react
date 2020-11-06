@@ -1,5 +1,5 @@
 export default {
-    primaryColor: 'royalblue',
+    primaryColor: 'teal',
     secondaryColor: 'crimson',
     tertiaryColor: 'mediumseagreen',
     danger: 'orange',
