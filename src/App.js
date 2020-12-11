@@ -26,9 +26,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Star Wars Characters</h1>
       <StyledDiv>
-        <div className='position relative'>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
       {
         characters.map(character => {
           return <Character key={character.id} character={character} />
@@ -45,6 +45,6 @@ export default App;
 const StyledDiv = styled.div`
 display: flex wrap;
 opacity: .65;
-margin-left: 33%;
-margin-right: 0%auto;
-`
+margin-left: 15%;
+margin-right: 15%;
+` 
